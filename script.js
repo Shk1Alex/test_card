@@ -160,7 +160,11 @@ document.getElementById('confirm-payment-btn').addEventListener('click', async (
   try {
     const response = await fetch('https://engine-sandbox.pay.tech/api/v1/payments', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': 'Bearer YOUR_SANDBOX_TOKEN' // <-- сюда свой токен
+      },
       body: JSON.stringify(body)
     });
 
