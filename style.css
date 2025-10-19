@@ -130,13 +130,13 @@ nav button.active {
 }
 
 .card-img-top {
-  display: block;          /* Чтобы можно было центрировать */
-  max-width: 200px;        /* Ограничение ширины */
-  max-height: 200px;       /* Ограничение высоты */
-  width: auto;             /* Сохраняем пропорции */
-  height: auto;            /* Сохраняем пропорции */
-  margin: 0 auto;          /* Центрирование по горизонтали */
-  object-fit: contain;     /* Изображение не обрезается */
+  display: block;         
+  max-width: 200px;      
+  max-height: 200px;      
+  width: auto;            
+  height: auto;            
+  margin: 0 auto;         
+  object-fit: contain;     
 }
 
 .card-header {
