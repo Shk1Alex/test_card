@@ -166,7 +166,7 @@ document.getElementById('confirm-payment-btn').addEventListener('click', async (
       cardholderName: document.getElementById('cardholder-name').value,
       cardSecurityCode: document.getElementById('cvv').value,
       expiryMonth: document.getElementById('expiry').value.split('/')[0],
-      expiryYear: document.getElementById('expiry').value.split('/')[1]
+      expiryYear: document.getElementById('expiry').value.split('/')[1],
 
     }
   };
