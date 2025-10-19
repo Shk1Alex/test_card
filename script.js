@@ -154,7 +154,21 @@ document.getElementById('confirm-payment-btn').addEventListener('click', async (
   const quantity = parseInt(quantityInput.value);
     const body = {
     paymentType: "DEPOSIT",
-    currency: "USD"
+    paymentMethod: "BASIC_CARD",
+    referenceId: "1", // допустим 1
+    amount: quantity * productPrice, 
+    currency: "USD",
+    parentPaymentId: "1", // допустим 1
+    description: "test", 
+    card: {
+      cardNumber: document.getElementById('card-number').value,
+      cardToken: "1", // токен
+      cardholderName: document.getElementById('cardholder-name').value,
+      cardSecurityCode: document.getElementById('cvv').value,
+      expiryMonth: document.getElementById('expiry').value.split('/')[0],
+      expiryYear: document.getElementById('expiry').value.split('/')[1]
+
+    }
   };
 
   try {
@@ -163,16 +177,19 @@ document.getElementById('confirm-payment-btn').addEventListener('click', async (
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'Authorization': 'Bearer YOUR_SANDBOX_TOKEN' // <-- сюда свой токен
+        'Authorization': 'Bearer YOUR_SANDBOX_TOKEN' // вставь свой токен
       },
       body: JSON.stringify(body)
     });
 
     if (!response.ok) throw new Error(`Ошибка платежа: ${response.status}`);
 
-    console.log('Payment API Response:', await response.json());
+    const result = await response.json();
+    console.log('Payment API Response:', result);
+
     closePaymentModal();
     processPurchase(quantity);
+
     document.getElementById('payment-form').reset();
   } catch (error) {
     console.error(error);
