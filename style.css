@@ -1,0 +1,148 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column; 
+}
+
+main {
+  flex: 1; 
+}
+
+nav {
+  background: #333;
+  color: white;
+  display: flex;
+}
+
+nav button {
+  flex: 1;
+  background: none;
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+nav button.active {
+  background: #555;
+}
+
+
+.tab {
+  display: none;
+  padding: 20px 10px; 
+}
+
+.tab.active {
+  display: block;
+}
+
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+
+.orders-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.orders-list li {
+  background: #f1f1f1;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.card {
+  margin: 15px 0 !important; 
+}
+
+
+@media screen and (max-width: 650px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .tab {
+    padding: 10px 5px;
+  }
+
+  .card {
+    margin: 10px 0 !important;
+  }
+
+  #product-quantity {
+    width: 50px;
+  }
+
+  .orders-list li {
+    font-size: 10px;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  body {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav button {
+    padding: 18px;
+    font-size: 18px;
+  }
+
+  .tab {
+    padding: 15px 10px;
+    flex: 1;
+  }
+
+  .card {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .orders-list li {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  #product-quantity {
+    width: 60px;
+  }
+}
+
+.card-img-top {
+  display: block;          /* Чтобы можно было центрировать */
+  max-width: 200px;        /* Ограничение ширины */
+  max-height: 200px;       /* Ограничение высоты */
+  width: auto;             /* Сохраняем пропорции */
+  height: auto;            /* Сохраняем пропорции */
+  margin: 0 auto;          /* Центрирование по горизонтали */
+  object-fit: contain;     /* Изображение не обрезается */
+}
+
+.card-header {
+  background-color: rgb(200 200 200) !important;
+}
+
+.card-header h2{
+  font-size: 1,5rem !important;
+}
